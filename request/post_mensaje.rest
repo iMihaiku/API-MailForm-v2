@@ -1,0 +1,7 @@
+POST http://localhost:3001/api/mensajes
+Content-Type: application/json
+
+{
+  "usuario": "usuario5",
+  "contenido": "Contenido 5"
+}
