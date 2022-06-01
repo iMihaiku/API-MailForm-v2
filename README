@@ -1,0 +1,10 @@
+Para este desarrollo he usado: 
+  Node.js
+  Express
+  MongoDB + atlas + mongoose
+  nodemon
+  jest
+  cross-env
+  Heroku
+  Sentry
+  Extension: Rest Client

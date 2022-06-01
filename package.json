@@ -4,22 +4,34 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "cross-env NODE_ENV=test jest --verbose --silent",
+    "test:watch": "npm run test -- --watch",
+    "lint": "npm run lint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.16.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "nodemon": "2.0.16"
+    "eslint": "8.16.0",
+    "eslint-config-standard": "17.0.0",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-n": "15.2.0",
+    "eslint-plugin-promise": "6.0.0",
+    "jest": "28.1.0",
+    "nodemon": "2.0.16",
+    "supertest": "^6.2.3"
   },
   "dependencies": {
+    "@sentry/node": "^7.0.0",
+    "@sentry/tracing": "^7.0.0",
     "cors": "2.8.5",
-    "express": "4.18.1"
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.1",
+    "express": "4.18.1",
+    "mongoose": "6.3.5"
+  },
+  "jest": {
+    "testEnviroment": "node"
   }
 }

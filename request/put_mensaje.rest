@@ -1,0 +1,7 @@
+PUT http://localhost:3001/api/mensajes/62972ecb1a859ce8df66eaa2
+Content-Type: application/json
+
+{
+  "usuario": "Usuario Modificado por segunda vez",
+  "contenido": "Contenido Modificado"
+}
