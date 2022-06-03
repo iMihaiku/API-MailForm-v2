@@ -80,7 +80,8 @@ app.post('/api/mensajes', async (req, res, next) => {
   }
 
   const mensaje = new Mensaje({
-    usuario: mensajeRecibido.usuario,
+    asunto: mensajeRecibido.asunto,
+    email: mensajeRecibido.email,
     contenido: mensajeRecibido.contenido,
     fecha: new Date()
   })

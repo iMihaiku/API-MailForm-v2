@@ -3,7 +3,7 @@ Para este desarrollo he usado:
   Express
   MongoDB + atlas + mongoose
   nodemon
-  jest
+  jest-supertest
   cross-env
   Heroku
   Sentry

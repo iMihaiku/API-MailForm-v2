@@ -16,7 +16,7 @@ test('Mensajes devueltos como json', async () => {
     .expect('Content-Type', /application\/json/)
 })
 
-test('Hay mas de 1 nota', async () => {
+test('Hay mas de 1 mensaje', async () => {
   const res = await api.get('/api/mensajes')
   expect(res.body).toHaveLength(2)
 })
