@@ -4,7 +4,14 @@ const mensajeSchema = new Schema({
   asunto: String,
   email: String,
   contenido: String,
-  fecha: Date
+  usuario: {
+    type: Schema.Types.ObjectId,
+    ref: 'Usuario'
+  },
+  procedencia: String,
+  fecha: Date,
+  leido: Boolean,
+  favorito: Boolean
 })
 
 mensajeSchema.set('toJSON', {

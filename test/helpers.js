@@ -3,19 +3,19 @@ const { app } = require('../index')
 const api = supertest(app)
 
 const mensajesIniciales = [{
-  usuario: 'Mihaiku',
+  asunto: 'Prueba de envio 1',
   contenido: 'Contenido de prueba',
   fecha: new Date()
 },
 {
-  usuario: 'Silverion',
+  asunto: 'Prueba de envio 2',
   contenido: 'Sigue siendo malo a los videojuegos',
   fecha: new Date()
 }]
 const todoUsuariosDeMensajes = async () => {
   const res = await api.get('/api/mensajes')
   return {
-    usuarios: res.body.map(mensaje => mensaje.usuario),
+    asunto: res.body.map(mensaje => mensaje.asunto),
     res
   }
 }

@@ -4,11 +4,6 @@ const connectionString = NODE_ENV === 'test'
   ? MONGO_DB_URI_TEST
   : MONGO_DB_URI
 
-mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-})
+mongoose.connect(connectionString)
   .then(() => { console.log('Conectado a la base de datos') })
   .catch(err => { console.log(err) })
