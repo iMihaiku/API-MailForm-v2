@@ -11,6 +11,6 @@ module.exports = (req, res, next) => {
   if (!token || !decodedToken) {
     return res.status(401).json({ error: 'token no valido o no existente' })
   }
-  req.userId = decodedToken.id
+  req.idUsuario = decodedToken.id
   next()
 }
