@@ -4,11 +4,12 @@ const Usuario = require('../modelo/Usuario')
 const usuarioExtraido = require('../middlewares/usuarioExtraido')
 
 mensajeRouter.get('/', usuarioExtraido, async (req, res, next) => {
-  const mensajes = await Mensaje.find({ usuario: { _id: req.userId } })
+  console.log(req.idUsuario);
+  const mensajes = await Mensaje.find({ usuario: { _id: req.idUsuario } })
   res.json(mensajes)
 })
 mensajeRouter.get('/favoritos', usuarioExtraido, async (req, res, next) => {
-  const mensajes = await Mensaje.find({ usuario: { _id: req.userId }, favorito: true })
+  const mensajes = await Mensaje.find({ usuario: { _id: req.idUsuario }, favorito: true })
   res.json(mensajes)
 })
 mensajeRouter.get('/:id', usuarioExtraido, (req, res, next) => {
