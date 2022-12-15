@@ -66,7 +66,8 @@ mensajeRouter.post('/:procedencia', usuarioExtraido, async (req, res, next) => {
       error: 'se requiere un "contenido" para un mensaje completo'
     })
   }
-  const idUsuario = req.userId
+  const idUsuario = req.idUsuario
+  console.log('idUsuario', idUsuario);
   const usuarioActual = await Usuario.findById(idUsuario)
   const mensaje = new Mensaje({
     asunto,

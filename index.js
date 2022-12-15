@@ -47,7 +47,7 @@ app.use(notFound)
 app.use(Sentry.Handlers.errorHandler())
 app.use(handleErrors)
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3005
 let server
 if (process.env.NODE_ENV !== 'test') {
   server = app.listen(PORT, () => {
