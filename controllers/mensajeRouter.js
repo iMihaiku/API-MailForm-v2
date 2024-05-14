@@ -4,12 +4,15 @@ const Usuario = require('../modelo/Usuario')
 const usuarioExtraido = require('../middlewares/usuarioExtraido')
 
 mensajeRouter.get('/', usuarioExtraido, async (req, res, next) => {
-  console.log(req.idUsuario);
+  console.log(req.idUsuario)
   const mensajes = await Mensaje.find({ usuario: { _id: req.idUsuario } })
   res.json(mensajes)
 })
 mensajeRouter.get('/favoritos', usuarioExtraido, async (req, res, next) => {
-  const mensajes = await Mensaje.find({ usuario: { _id: req.idUsuario }, favorito: true })
+  const mensajes = await Mensaje.find({
+    usuario: { _id: req.idUsuario },
+    favorito: true,
+  })
   res.json(mensajes)
 })
 mensajeRouter.get('/:id', usuarioExtraido, (req, res, next) => {
@@ -50,7 +53,7 @@ mensajeRouter.put('/:id', usuarioExtraido, async (req, res, next) => {
     asunto: mensajeRecibido.asunto,
     contenido: mensajeRecibido.contenido,
     leido: mensajeRecibido.leido,
-    favorito: mensajeRecibido.favorito
+    favorito: mensajeRecibido.favorito,
   }
   Mensaje.findByIdAndUpdate(id, mensaje, { new: true })
     .then((resultado) => {
@@ -64,11 +67,11 @@ mensajeRouter.post('/:procedencia', usuarioExtraido, async (req, res, next) => {
   const { asunto, email, contenido } = req.body
   if (!contenido) {
     return res.status(400).json({
-      error: 'se requiere un "contenido" para un mensaje completo'
+      error: 'se requiere un "contenido" para un mensaje completo',
     })
   }
   const idUsuario = req.idUsuario
-  console.log('idUsuario', idUsuario);
+  console.log('idUsuario', idUsuario)
   const usuarioActual = await Usuario.findById(idUsuario)
   const mensaje = new Mensaje({
     asunto,
@@ -78,7 +81,7 @@ mensajeRouter.post('/:procedencia', usuarioExtraido, async (req, res, next) => {
     procedencia: req.params.procedencia || 'Desconocida',
     fecha: new Date(),
     leido: false,
-    favorito: false
+    favorito: false,
   })
   try {
     const mensajeGuardado = await mensaje.save()
