@@ -1,7 +1,0 @@
-POST https://lit-inlet-93494.herokuapp.com/login
-Content-Type: application/json
-
-{
-  "username": "Miha",
-  "password" : "1234"
-}
