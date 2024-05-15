@@ -1,10 +1,7 @@
-Para este desarrollo he usado: 
-  Node.js
-  Express
-  MongoDB + atlas + mongoose
-  nodemon
-  jest-supertest
-  cross-env
-  Heroku
-  Sentry
-  Extension: Rest Client
+### MailForm API
+
+#### Microservicio dedicado al manejo y gestion de mensajes a traves de MongoDB 
+
+El microservicio esta enfocado en la integracion individual dentro de una aplicacion para ofrecer un servicio de mensajeria sin emails de por medio, de tal forma que puedas crear un apartado de interaccion de usuario a empresa. 
+
+Para instalar y configurar sera necesario...
